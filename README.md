@@ -1,0 +1,1 @@
+Birds like gannets determine the time to collision adn not distance.

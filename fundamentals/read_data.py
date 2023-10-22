@@ -1,4 +1,15 @@
 import cv2
+import sys
+import numpy
+
+print(f"Python version: {sys.version}")
+print(f"Numpy version: {numpy.__version__}")
+print(f"OpenV version: {cv2.__version__}")
+
+
+print(f"OpenV path: {cv2.__file__}")
+
+
 
 """
 Image

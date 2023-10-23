@@ -16,7 +16,7 @@ cv2.createTrackbar("Val Min","TrackBars",153,255,empty)
 cv2.createTrackbar("Val Max","TrackBars",255,255,empty)
 
 while True:
-    img = cv2.imread("../media/road1.jpg")
+    img = cv2.imread("../images/hsl_hsv.png")
     img = cv2.resize(img, (500,500))
 
     # Convert to HSV

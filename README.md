@@ -1,7 +1,9 @@
 # Fundamentals
 
 Images are just 2D arrays.
-<br>Specifically objects of numpy arrays
+<br>Specifically objects of numpy arrays.
+
+Images are made of pixels - individual cells of the array
 
 Terms like VGA, HD, FulHD, 4k defined the size of image in pixels.
 
@@ -10,6 +12,8 @@ Videos are nothing just images flashed multiple time a second.
 Binary Image : Image whose cells only have two values typically zero and one.
 
 Usually black is denoted by 0 and white with 255, each image size being 8 bit long. 
+
+Human eyes has three types of photoreceptor cells for color, kind of three types of sensors for perception and each sensor responds to RGB individually. 
 
 
 # Perception
@@ -39,18 +43,29 @@ Changing the focal length of the lens results in blurring of the image.
    ↓
 ```
 
-**Color Models:**
+**Color Spaces:**
 - RGB => Red, Green, Blue
+- BGR => Blue, Green, Red
 - HSV => Hue, Saturation, Value
 
-**Transformations:**
+<p align="center">
+	<img src="images/hsl_hsv.png" width="290" height="290"/>
+</p>
+
+**Operations:**
 - Convert to greyscale
-- Blur
+- Blur : Replace a pixel by the average of neighboring pixels 
 - Edge detection : Canny Algorithm
 - Dilation : Enlarge regions to make feature more prominent
 - Erosion : Reduce features
-- Resize
+- Thresholding
+
+**Transformations:**
+- Translations
+- Rotations
+- Flip
 - Crop
+- - Resize
 
 **Objects:**
 - Generation of Image
@@ -80,6 +95,10 @@ Apply edge detection
 Or simply use findContours method.
 
 Shapes can also be detected using contours.
+
+Bounding Boxes are added to enclose the contours and display the object.
+
+# Aruco Markers
 
 # Usage
 

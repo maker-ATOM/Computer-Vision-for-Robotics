@@ -30,6 +30,9 @@ Video
 #     cv2.imshow("video", img)
 #     cv2.waitKey(30)
 
+# vid.release()
+# cv2.destroyAllWindows()
+
 """
 Webcam
 """
@@ -38,4 +41,8 @@ cam = cv2.VideoCapture(0)
 while True:
     success, img = cam.read()
     cv2.imshow("video", img)
-    cv2.waitKey(1)
+    # more the wait more laggy the feed br
+    cv2.waitKey(200)
+
+vid.release()
+cv2.destroyAllWindows()

@@ -107,12 +107,11 @@ Requirements:
 ```python
 Python version: 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0]
 Numpy version: 1.26.1
-Opencv version: 4.8.1
+Opencv version: 4.7.0
 ```
 
 ```python
-
-pip install opencv-python
+pip3 install opencv-contrib-python==4.4.0.46
 ```
 
 Clone the repository.
@@ -129,6 +128,25 @@ cd <path_to_cloned_directory>/fundamentals
 Execute the script
 ```python
 python3 read_data.py
+```
+
+If in any case
+```python
+pip uninstall opencv-contrib-python
+```
+
+```python
+pip installation
+Python version: 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0]
+Numpy version: 1.26.1
+OpenV version: 4.8.1
+OpenV path: /home/aditya/.local/lib/python3.10/site-packages/cv2/_init_.py
+
+or esle:
+Python version: 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0]
+Numpy version: 1.26.1
+OpenV version: 4.5.4
+OpenV path: /usr/lib/python3/dist-packages/cv2.cpython-310-x86_64-linux-gnu.so
 ```
 # Resources
 

@@ -62,10 +62,40 @@ Changing the focal length of the lens results in blurring of the image.
 
 **Transformations:**
 - Translations
+while cap.isOpened(
+while cap.isOpened():
+    
+	ret, img = cap.read()
+
+	h, w, _ = img.shape
+
+	width = 1000
+	height = int(width*(h/w))
+	img = cv2.resize(img, (width, height), interpolation=cv2.INTER_CUBIC)
+ 
+	corners, ids, rejected = cv2.aruco.detectMarkers(img, arucoDict, parameters=arucoParams)
+
+	detected_markers = aruco_display(corners, ids, rejected, img)
+
+	cv2.imshow("Image", detected_markers)):
+    
+	ret, img = cap.read()
+
+	h, w, _ = img.shape
+
+	width = 1000
+	height = int(width*(h/w))
+	img = cv2.resize(img, (width, height), interpolation=cv2.INTER_CUBIC)
+ 
+	corners, ids, rejected = cv2.aruco.detectMarkers(img, arucoDict, parameters=arucoParams)
+
+	detected_markers = aruco_display(corners, ids, rejected, img)
+
+	cv2.imshow("Image", detected_markers)
 - Rotations
 - Flip
 - Crop
-- - Resize
+- Resize
 
 **Objects:**
 - Generation of Image
@@ -105,7 +135,7 @@ Bounding Boxes are added to enclose the contours and display the object.
 Requirements:
 
 ```python
-Python version: 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0]
+Python version: 3.10.12
 Numpy version: 1.21.5
 OpenV version: 4.6.0
 Numpy path: /home/aditya/.local/lib/python3.10/site-packages/numpy/__init__.py
@@ -140,21 +170,14 @@ pip3 uninstall opencv-python
 sudo apt-get remove python3-numpy
 ```
 
-```python
-pip installation
-Python version: 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0]
-Numpy version: 1.26.1
-OpenV version: 4.8.1
-OpenV path: /home/aditya/.local/lib/python3.10/site-packages/cv2/_init_.py
+Generation site
 
-or esle:
-Python version: 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0]
-Numpy version: 1.26.1
-OpenV version: 4.5.4
-OpenV path: /usr/lib/python3/dist-packages/cv2.cpython-310-x86_64-linux-gnu.so
+```python
+https://chev.me/arucogen/
 ```
+
 # Resources
 
-[Computer Vision Engineer](https://www.youtube.com/watch?v=eDIj5LuIL4A)
-[Murtaza](https://www.youtube.com/watch?v=WQeoO7MI0Bs)
-[freecodecamp](https://www.youtube.com/watch?v=oXlwWbU8l2o)
+[Computer Vision Engineer](https://www.youtube.com/watch?v=eDIj5LuIL4A) | 
+[Murtaza](https://www.youtube.com/watch?v=WQeoO7MI0Bs) |
+[freecodecamp](https://www.youtube.com/watch?v=oXlwWbU8l2o) 

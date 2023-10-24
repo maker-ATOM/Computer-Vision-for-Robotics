@@ -68,7 +68,7 @@ arucoDict = cv2.aruco.Dictionary_get(ARUCO_DICT[aruco_type])
 arucoParams = cv2.aruco.DetectorParameters_create()
 
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("../media/aruco.webm")
 
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
@@ -90,9 +90,11 @@ while cap.isOpened():
 
 	cv2.imshow("Image", detected_markers)
 
-	key = cv2.waitKey(1) & 0xFF
-	if key == ord("q"):
-	    break
+	# key = cv2.waitKey(1) & 0xFF
+	# if key == ord("q"):
+	#     break
+
+	cv2.waitKey(30)
 
 cv2.destroyAllWindows()
 cap.release()

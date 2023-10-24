@@ -68,7 +68,7 @@ arucoDict = cv2.aruco.Dictionary_get(ARUCO_DICT[aruco_type])
 arucoParams = cv2.aruco.DetectorParameters_create()
 
 
-cap = cv2.VideoCapture("../media/aruco.webm")
+cap = cv2.VideoCapture("../media/aruco1.webm")
 
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
@@ -78,8 +78,10 @@ while cap.isOpened():
     
 	ret, img = cap.read()
 
-	h, w, _ = img.shape
-
+	try:
+		h, w, _ = img.shape
+	except:
+		print("end")
 	width = 1000
 	height = int(width*(h/w))
 	img = cv2.resize(img, (width, height), interpolation=cv2.INTER_CUBIC)

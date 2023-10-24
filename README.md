@@ -130,6 +130,20 @@ Bounding Boxes are added to enclose the contours and display the object.
 
 # Aruco Markers
 
+Type of barcode like markers used for mostly calibration of camera and reference points for tracking and recognizing objects or positions in the real world.
+
+ArUco markers are based on Hamming code.<br>
+In the grid, the first, third and fifth columns represent parity bits. The second and fourth columns represent the data bits. Hence, there are ten total data bits.
+
+A predefined dictionary is used for detection and generation of markers.
+
+The dictionaries follow a specific naming convention NxN_M<br>
+Where NxN defines the size of the marker in terms of gid cells and also bit size of information it contains so A 5x5 marker hsa 5x5 grd cell and contains 25 bit info, each cell represents a single bit
+
+M represents the total unique markers will be generate.
+
+Each pattern within the dictionary has a unique ID associated.
+
 # Usage
 
 Requirements:
@@ -170,7 +184,7 @@ pip3 uninstall opencv-python
 sudo apt-get remove python3-numpy
 ```
 
-Generation site
+Aruco Marker Generation site
 
 ```python
 https://chev.me/arucogen/

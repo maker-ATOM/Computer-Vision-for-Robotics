@@ -1,10 +1,10 @@
 import numpy
-# import cv2
+import cv2
 import sys
 
 print(f"Python version: {sys.version}")
 print(f"Numpy version: {numpy.__version__}")
-# print(f"OpenV version: {cv2.__version__}")
+print(f"OpenV version: {cv2.__version__}")
 
 print(f"Numpy path: {numpy.__file__}")
 print(f"OpenV path: {cv2.__file__}")
@@ -14,24 +14,24 @@ print(f"OpenV path: {cv2.__file__}")
 """
 Image
 """
-# img = cv2.imread("../media/nissan.jpg")
+img = cv2.imread("../media/nissan.jpg")
 
-# cv2.imshow("output", img)
-# cv2.waitKey(1000)
+cv2.imshow("output", img)
+cv2.waitKey(1000)
 
 
 """
 Video
 """
-vid = cv2.VideoCapture("../media/cars.mp4")
+# vid = cv2.VideoCapture("../media/cars.mp4")
 
-while True:
-    success, img = vid.read()
-    cv2.imshow("video", img)
-    cv2.waitKey(30)
+# while True:
+#     success, img = vid.read()
+#     cv2.imshow("video", img)
+#     cv2.waitKey(30)
 
-vid.release()
-cv2.destroyAllWindows()
+# vid.release()
+# cv2.destroyAllWindows()
 
 """
 Webcam

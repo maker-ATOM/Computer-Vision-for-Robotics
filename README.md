@@ -106,12 +106,15 @@ Requirements:
 
 ```python
 Python version: 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0]
-Numpy version: 1.26.1
-Opencv version: 4.7.0
+Numpy version: 1.21.5
+OpenV version: 4.6.0
+Numpy path: /home/aditya/.local/lib/python3.10/site-packages/numpy/__init__.py
+OpenV path: /home/aditya/.local/lib/python3.10/site-packages/cv2/__init__.py
+
 ```
 
 ```python
-pip3 install opencv-contrib-python==4.4.0.46
+pip3 install opencv-contrib-python==4.6.0.66
 ```
 
 Clone the repository.
@@ -132,7 +135,9 @@ python3 read_data.py
 
 If in any case
 ```python
-pip uninstall opencv-contrib-python
+pip3 uninstall opencv-contrib-python
+pip3 uninstall opencv-python
+sudo apt-get remove python3-numpy
 ```
 
 ```python

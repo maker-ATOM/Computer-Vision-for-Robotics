@@ -1,34 +1,43 @@
+#! /usr/bin/env python3
+
+
 import cv2
+import cv2.aruco as aruco
 import numpy as np
 
-# Initialize the camera or video capture (0 for the default camera)
-cap = cv2.VideoCapture(0)
 
-# Create an ArUco dictionary (e.g., DICT_6X6_250)
-aruco_dict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_6X6_250)
+# Create an empty image for the marker
+markerImage = np.zeros((200, 200), dtype=np.uint8)
 
-# Create a parameters object
-parameters = cv2.aruco.DetectorParameters_create()
+# Define the ArUco dictionary and generate the marker
+dictionary = aruco.Dictionary_get(cv2.aruco.DICT_6X6_250)
+cv2.aruco.drawMarker(dictionary, 23, 200, markerImage)
 
-while True:
-    ret, frame = cap.read()
+# Save the generated marker image to a file
+cv2.imshow("output", markerImage)
+cv2.waitKey(0)
 
-    if not ret:
-        break
 
-    # Detect ArUco markers in the frame
-    corners, ids, rejectedImgPoints = cv2.aruco.detectMarkers(frame, aruco_dict, parameters=parameters)
+# img = cv2.imread("../media/aruco.jpg")
 
-    if ids is not None:
-        for i in range(len(ids)):
-            # Draw a bounding box around the detected marker
-            cv2.aruco.drawDetectedMarkers(frame, corners, ids)
+# cv2.imshow("output", img)
 
-    # Display the frame with ArUco marker detection
-    cv2.imshow('ArUco Marker Detection', frame)
 
-    if cv2.waitKey(1) & 0xFF == 27:  # Press 'Esc' to exit
-        break
+# gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+# aruco_dict = aruco.Dictionary(aruco.DICT_4X4_250,4)
+# Parameters = aruco.DetectorParameters()
+# corners, ids, _ = aruco.detectMarkers(gray, aruco_dict, parameters=Parameters)
+# print(corners, id)
 
-cap.release()
-cv2.destroyAllWindows()
+
+# cv2.waitKey(2000)
+
+
+
+# corners, ids = self.detect_aruco(cv_image)
+# print( "image corner generated")
+
+# image = aruco.drawDetectedMarkers(self.gray, corners, ids, borderColor=(0, 255, 0))
+# print("drawing")
+# cv2.imshow("aruco_tags", image)
+# cv2.waitKey(3)

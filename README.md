@@ -59,39 +59,11 @@ Changing the focal length of the lens results in blurring of the image.
 - Dilation : Enlarge regions to make feature more prominent
 - Erosion : Reduce features
 - Thresholding
+- Bitwise => AND, OR, NOT, XOR
+- Masking
 
 **Transformations:**
 - Translations
-while cap.isOpened(
-while cap.isOpened():
-    
-	ret, img = cap.read()
-
-	h, w, _ = img.shape
-
-	width = 1000
-	height = int(width*(h/w))
-	img = cv2.resize(img, (width, height), interpolation=cv2.INTER_CUBIC)
- 
-	corners, ids, rejected = cv2.aruco.detectMarkers(img, arucoDict, parameters=arucoParams)
-
-	detected_markers = aruco_display(corners, ids, rejected, img)
-
-	cv2.imshow("Image", detected_markers)):
-    
-	ret, img = cap.read()
-
-	h, w, _ = img.shape
-
-	width = 1000
-	height = int(width*(h/w))
-	img = cv2.resize(img, (width, height), interpolation=cv2.INTER_CUBIC)
- 
-	corners, ids, rejected = cv2.aruco.detectMarkers(img, arucoDict, parameters=arucoParams)
-
-	detected_markers = aruco_display(corners, ids, rejected, img)
-
-	cv2.imshow("Image", detected_markers)
 - Rotations
 - Flip
 - Crop
@@ -104,7 +76,9 @@ while cap.isOpened():
 - Circles
 - Text
 
-**Warp Perspective**
+**Warp Perspective**<br>
+Change the perspective of image
+
 
 **Stack Images**
 
@@ -127,6 +101,9 @@ Or simply use findContours method.
 Shapes can also be detected using contours.
 
 Bounding Boxes are added to enclose the contours and display the object.
+
+**Histogram**<br>
+Distribution of pixel intensity in the image.
 
 # Aruco Markers
 

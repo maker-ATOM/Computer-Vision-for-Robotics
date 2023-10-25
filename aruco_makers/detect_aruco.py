@@ -27,7 +27,7 @@ ARUCO_DICT = {
 	"DICT_APRILTAG_36h11": cv2.aruco.DICT_APRILTAG_36h11
 }
 
-
+                print("ArUco marker ID: {}".format(markerID))
 def aruco_display(corners, ids, rejected, image):
 	if len(corners) > 0:
 		
@@ -46,7 +46,7 @@ def aruco_display(corners, ids, rejected, image):
 			cv2.line(image, topLeft, topRight, (0, 255, 0), 2)
 			cv2.line(image, topRight, bottomRight, (0, 255, 0), 2)
 			cv2.line(image, bottomRight, bottomLeft, (0, 255, 0), 2)
-			cv2.line(image, bottomLeft, topLeft, (0, 255, 0), 2)
+			cv2.li                print("ArUco marker ID: {}".format(markerID))ne(image, bottomLeft, topLeft, (0, 255, 0), 2)
 			
 			cX = int((topLeft[0] + bottomRight[0]) / 2.0)
 			cY = int((topLeft[1] + bottomRight[1]) / 2.0)

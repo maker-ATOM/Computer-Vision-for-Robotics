@@ -28,7 +28,85 @@ Primary components for cameras.
 
 Changing the focal length of the lens results in blurring of the image.
 
-# Single View Geometry.
+Increase the focal length and hhe felid of view decreases and the object magnifies, decrease the focal length and the field of view increases reducing the object size.   
+
+Image plane is situated at the focal length of the camera.
+
+**Intrinsic camera parameters**<br>
+Intrinsic camera parameters refer to the internal characteristics and properties of a camera that are essential for capturing images. 
+
+- Focal Length (f): The focal length is the distance between the lens and the image sensor when the lens is focused at infinity. It determines the magnification and field of view of the camera.
+
+- Principal Point (or Optical Center): The principal point is the point where the optical axis intersects the image plane. It represents the center of the image and is crucial for correcting lens distortion.
+
+- Pixel Aspect Ratio: This parameter describes the ratio of the width of a pixel to its height. It is necessary for accurately mapping pixel coordinates to physical dimensions.
+
+= Lens Distortion Parameters: Distortion can occur due to imperfections in the camera lens. Common distortion types include radial distortion (caused by the curvature of the lens) and tangential distortion (resulting from the lens not being perfectly parallel to the image plane). Distortion parameters are used to correct these distortions.
+
+
+$$
+\begin{bmatrix}
+    x \\
+    y \\
+    1 \\
+\end{bmatrix} =
+\begin{bmatrix}
+    a_xf & sf & p_x\\
+    0 & a_yf &  p_y\\
+    0 & 0 &  1\\
+\end{bmatrix} 
+\begin{bmatrix}
+    x' \\
+    y' \\
+    z' \\
+\end{bmatrix} 
+$$
+
+where x, y, z is point in image world (coordinates of object in the image) and x', y', z' is point in optical world (coordinates of the object wrt camera).<br>
+a<sub>x</sub>, a<sub>y</sub> is the pixel scaling factor.<br>
+p<sub>x</sub>, p<sub>y</sub> is the principle point, where optical axis hits the image plane (ideally center) <br>
+s is the skew factor when image plan is not perpendicular to ideal image plane. <br>
+f is the focal length of the camera
+
+This matrix is also know as calibration matrix.
+
+# Single View Geometry
+
+To interpret the position of the camera by observing the orientation of objects within the image.
+
+**Single View Measurement**
+
+Unwrap the image to do measurements.
+
+**Vanishing Point**
+
+<p align="center">
+	<img src="images/vanish.png" width="289" height="209"/>
+</p>
+
+Wiki - A vanishing point is a point on the image plane of a perspective rendering where the two-dimensional perspective projections of mutually parallel lines in three-dimensional space appear to converge. 
+
+Vanishing points lie on horizon.
+
+An image can have multiple vanishing point.
+
+Any two  parallel lines have same vanishing point.
+
+Height of the horizon in the image plane can used to deduce the height of the camera lifted in ground frame.
+
+**Geometric intuition**
+
+Homogenous coordinates
+
+A point in the image is a ray in projective space. Association of a ray to a point. The origin is considered as the camera itself anf the image plane along the z-axis at unit distance.
+
+<p align="center">
+	<img src="images/imagep.png" width="600" height="502"/>
+</p>
+
+A line in the image plane can be considered as plane in the projective space.
+
+
 
 # opencv
 

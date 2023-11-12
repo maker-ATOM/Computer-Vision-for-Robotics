@@ -70,6 +70,23 @@ f is the focal length of the camera
 
 This matrix is also know as calibration matrix.
 
+**Computation of Intrinsic parameters using Vanishing points**
+
+The orientation of horizon tells how much the camera is tilted.
+
+Find three vanishing points in the image (vertical as well as horizontal) the ortho-center of the triangle formed by these three vanishing point is the optical center of the image.
+
+**Projective Transformation**
+
+When the perspective of the image plane changed.
+
+A point in the world plane can be presented in the image plane after performing homography transformation.
+ First column of the homography matrix represents the vanishing point in x direction of world plane and second column represents the vanishing point in y direction.
+
+**Cross Ratio** 
+
+When a image is taken a segment in the world a is projected in the image, the center of the segment is not preserved but the cross ratio of the segment is preserved.
+
 # Single View Geometry
 
 To interpret the position of the camera by observing the orientation of objects within the image.
